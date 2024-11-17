@@ -978,11 +978,13 @@ while (i < SizeOf(input_list))
     # 上付き
     Select(0u2070); Copy() # ⁰
     Select(${address_store_zero} + 1); Paste() # 保管所
+    Scale(${scale_super_sub2}, 307, ${move_y_super} + 279)
     SetWidth(${width_hankaku})
 
     # 下付き
     Select(0u2080); Copy() # ₀
     Select(${address_store_zero} + 2); Paste() # 保管所
+    Scale(${scale_super_sub2}, 307, ${move_y_sub} + 279)
     SetWidth(${width_hankaku})
 
     Select(65552); Clear() # Temporary glyph
