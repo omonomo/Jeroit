@@ -954,11 +954,11 @@ while (i < SizeOf(input_list))
     if (input_list[i] == "${input_latin_regular}")
         Scale(70, 105); Copy()
         Select(0u0056); # V
-        PasteWithOffset(-185, -17) # V
+        PasteWithOffset(-189, -17) # V
     else
         Scale(80, 105); Copy()
         Select(0u0056); # V
-        PasteWithOffset(-175, -29) # V
+        PasteWithOffset(-180, -29) # V
     endif
 
     SetWidth(${width_hankaku})
@@ -1692,73 +1692,19 @@ while (i < SizeOf(input_list))
         j += 1
     endloop
 
-# ←-⇿ (全角にする)
+# 一部の記号を全角にする
     Select(0u2190, 0u21ff) # ←-⇿
+    SelectMore(0u2389, 0u238a) # ⎉⎊
+    SelectMore(0u23fb, 0u23fe) # ⏻⏼⏽⏾
+    SelectMore(0u2600, 0u2638) # ☀-☸
+    SelectMore(0u263c, 0u26b1) # ☼-⚱
+    SelectMore(0u2701, 0u27be) # ✁-➾
+    SelectMore(0u27f0, 0u27ff) # ⟰-⟿
+    SelectMore(0u2900, 0u297f) # ⤀-⥿
+    SelectMore(0u2b00, 0u2bff) # ⬀-⯿
     foreach
         if (WorthOutputting())
-            Move(205, 0)
-            Scale(${scale_hankaku2zenkaku}, ${width_zenkaku} / 2, ${center_height_hankaku})
-            SetWidth(${width_zenkaku})
-        endif
-    endloop
-
-# ⎉⎊ (全角にする)
-    Select(0u2389, 0u238a) # ⎉⎊
-    Move(205, 0)
-    Scale(${scale_hankaku2zenkaku}, ${width_zenkaku} / 2, ${center_height_hankaku})
-    SetWidth(${width_zenkaku})
-
-# ⏻⏼⏽⏾ (全角にする)
-    Select(0u23fb, 0u23fe) # ⏻⏼⏽⏾
-    Move(205, 0)
-    Scale(${scale_hankaku2zenkaku}, ${width_zenkaku} / 2, ${center_height_hankaku})
-    SetWidth(${width_zenkaku})
-
-# ☀-☸ (全角にする)
-    Select(0u2600, 0u2638) # ☀-☸
-    foreach
-        if (WorthOutputting())
-            Move(205, 0)
-            Scale(${scale_hankaku2zenkaku}, ${width_zenkaku} / 2, ${center_height_hankaku})
-            SetWidth(${width_zenkaku})
-        endif
-    endloop
-
-# ☼-⚱ (全角にする)
-    Select(0u263c, 0u26b1) # ☼-⚱
-    foreach
-        if (WorthOutputting())
-            Move(205, 0)
-            Scale(${scale_hankaku2zenkaku}, ${width_zenkaku} / 2, ${center_height_hankaku})
-            SetWidth(${width_zenkaku})
-        endif
-    endloop
-
-# ✁-➾ (全角にする)
-    Select(0u2701, 0u27be) # ✁-➾
-    foreach
-        if (WorthOutputting())
-            Move(205, 0)
-            Scale(${scale_hankaku2zenkaku}, ${width_zenkaku} / 2, ${center_height_hankaku})
-            SetWidth(${width_zenkaku})
-        endif
-    endloop
-
-# ⟰-⟿ (全角にする)
-    Select(0u27f0, 0u27ff) # ⟰-⟿
-    foreach
-        if (WorthOutputting())
-            Move(205, 0)
-            Scale(${scale_hankaku2zenkaku}, ${width_zenkaku} / 2, ${center_height_hankaku})
-            SetWidth(${width_zenkaku})
-        endif
-    endloop
-
-# ⤀-⥿ (全角にする)
-    Select(0u2900, 0u297f) # ⤀-⥿
-    foreach
-        if (WorthOutputting())
-            Move(205, 0)
+            Move(204, 0)
             Scale(${scale_hankaku2zenkaku}, ${width_zenkaku} / 2, ${center_height_hankaku})
             SetWidth(${width_zenkaku})
         endif
@@ -2703,7 +2649,7 @@ while (i < \$argc)
     Select(0u0021); Copy() # !
     Select(0u203c); Paste() # ‼
     Move(70, 0)
-    Select(0u203c); PasteWithOffset(443, 0) # ‼
+    Select(0u203c); PasteWithOffset(440, 0) # ‼
     Move(-${move_x_hankaku}, 0)
     SetWidth(${width_zenkaku})
 
@@ -2720,7 +2666,7 @@ while (i < \$argc)
     Select(0u2048); Paste() # ⁈
     Move(80, 0)
     Select(0u0021); Copy() # !
-    Select(0u2048); PasteWithOffset(443, 0) # ⁈
+    Select(0u2048); PasteWithOffset(440, 0) # ⁈
     Move(-${move_x_hankaku}, 0)
     SetWidth(${width_zenkaku})
 
