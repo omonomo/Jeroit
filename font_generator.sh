@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Custom font generator
+# Custom font generator for Jeroit
 #
 # Copyright (c) 2024 omonomo
 #
@@ -133,11 +133,11 @@ scale_hankaku2zenkaku="125"
 
 # 上付き、下付き用
 move_y_super="392" # 基本から作成した上付き文字のY座標移動量
-move_y_super2="-90" # 上付きからのY座標移動量
+move_y_super2="0" # 上付きからのY座標移動量
 move_y_sub="-137" # 下付きY座標移動量
 scale_width_super_sub="65" # グリフX座標の拡大率
 scale_height_super_sub="60" # グリフY座標の拡大率
-weight_super_sub="14" # ウェイト調整量
+weight_super_sub="6" # ウェイト調整量
 scale_super_sub2="119" # 上付き、下付きからの拡大率
 
 # 縦書き全角ラテン小文字移動量
@@ -178,8 +178,8 @@ scale_width_hankaku="100" # 半角英数文字の横拡大率
 scale_height_hankaku="100" # 半角英数文字の縦拡大率
 width_hankaku="512" # 半角文字幅
 center_width=$((width_hankaku / 2)) # 半角文字X座標中心
-move_x_calt_latin="10" # ラテン文字のX座標移動量
-move_x_calt_symbol="32" # 記号のX座標移動量
+move_x_calt_latin="10" # ラテン文字のカーニングX座標移動量
+move_x_calt_symbol="32" # 記号のカーニングX座標移動量
 move_x_hankaku="0" # 半角文字移動量
 
 # Loose 版用
@@ -190,8 +190,8 @@ scale_width_hankaku_loose="100" # 半角英数文字の横拡大率 (Loose 版)
 scale_height_hankaku_loose="100" # 半角英数文字の縦拡大率 (Loose 版)
 width_hankaku_loose="576" # 半角文字幅 (Loose 版)
 center_width_loose=$((width_hankaku_loose / 2)) # 半角文字X座標中心 (Loose 版)
-move_x_calt_latin_loose="12" # ラテン文字のX座標移動量 (Loose 版)
-move_x_calt_symbol_loose="36" # 記号のX座標移動量 (Loose 版)
+move_x_calt_latin_loose="12" # ラテン文字のカーニングX座標移動量 (Loose 版)
+move_x_calt_symbol_loose="36" # 記号のカーニングX座標移動量 (Loose 版)
 move_x_hankaku_loose=$(((width_hankaku_loose - ${width_hankaku}) / 2)) # 半角文字移動量 (Loose 版)
 
 # デバッグ用
@@ -1231,6 +1231,13 @@ while (i < SizeOf(input_list))
     Select(0u212b); Paste() # Å
     SetWidth(${width_hankaku})
 
+# ∗ (ベースフォントを置き換え)
+    Select(0u002a) # *
+    Copy()
+    Select(0u2217) #∗
+    Paste()
+    SetWidth(${width_hankaku})
+
 # スラッシュ無し0を作成
     Print("Edit slashed zero")
 
@@ -1287,7 +1294,7 @@ while (i < SizeOf(input_list))
 
     Select(65552); Clear() # Temporary glyph
 
-# | (破線にし、縦を短くして少し左に移動)
+# | (破線にし、縦を短くする)
 # ¦ (隙間を開ける)
 
     # 破線無しを保管して加工
@@ -1454,6 +1461,8 @@ while (i < SizeOf(input_list))
         Select(orig[j]); Copy()
         Select(sups[j]); Paste()
         Scale(${scale_width_super_sub}, ${scale_height_super_sub}, 307, 0)
+        ChangeWeight(${weight_super_sub})
+        CorrectDirection()
         Move(0, ${move_y_super})
         Scale(${scale_super_sub2}, 307, ${move_y_super} + 279)
         SetWidth(${width_hankaku})
@@ -1601,6 +1610,7 @@ while (i < SizeOf(input_list))
  #        ChangeWeight(${weight_super_sub})
  #        CorrectDirection()
  #        Move(0, ${move_y_super})
+ #        Scale(${scale_super_sub2}, 307, ${move_y_super} + 279)
  #        SetWidth(${width_hankaku})
  #        glyphName = GlyphInfo("Name") # sups フィーチャ追加
  #        Select(orig[j])
@@ -1620,6 +1630,7 @@ while (i < SizeOf(input_list))
  #        ChangeWeight(${weight_super_sub})
  #        CorrectDirection()
  #        Move(0, ${move_y_super})
+ #        Scale(${scale_super_sub2}, 307, ${move_y_super} + 279)
  #        SetWidth(${width_hankaku})
  #        glyphName = GlyphInfo("Name") # sups フィーチャ追加
  #        Select(orig[j])
@@ -1683,7 +1694,7 @@ while (i < SizeOf(input_list))
 
 # 括弧を上下に移動
     brkt = [0u0028, 0u0029, 0u005b, 0u005d,\
-            0u007b, 0u007b] # ()[] {}
+            0u007b, 0u007d] # ()[] {}
     j = 0
     while (j < SizeOf(brkt))
         Select(brkt[j]);
@@ -1906,6 +1917,7 @@ while (i < SizeOf(input_list))
     Select(0u23e4); Clear() # ⏤
     Select(0u23e5); Clear() # ⏥
     Select(0u2425); Clear() # ␥
+ #    Select(0u2500, 0u259f); Clear() # 罫線素片・ブロック要素
     Select(0u25a0, 0u25a1); Clear() # ■□
     Select(0u25ac, 0u25af); Clear() # ▬▭▮▯
     Select(0u25b0, 0u25b1); Clear() # ▰▱
@@ -2574,6 +2586,31 @@ while (i < \$argc)
     HFlip()
     CorrectDirection()
     SetWidth(${width_hankaku})
+
+# ＿ (latin フォントの _ に合わせる)
+    Select(0uff3f) # ＿
+    Move(0, -5)
+    SetWidth(${width_zenkaku})
+
+# 演算子を上下に移動
+    math = [0u2252] # ≒
+ #    math = [0u2243, 0u2248, 0u2252, 0u223c] # ≃≈≒∼
+    j = 0
+    while (j < SizeOf(math))
+        Select(math[j]);
+        Move(0, ${move_y_math} - 2)
+    SetWidth(${width_hankaku})
+        j += 1
+    endloop
+
+ #    math = [0u226a, 0u226b] # ≪≫
+ #    j = 0
+ #    while (j < SizeOf(math))
+ #        Select(math[j]);
+ #        Move(0, ${move_y_math} - 2)
+ #        SetWidth(${width_zenkaku})
+ #        j += 1
+ #    endloop
 
 # --------------------------------------------------
 
@@ -3389,7 +3426,7 @@ while (i < \$argc)
     Select(0u003a); Copy() # :
     glyphName = GlyphInfo("Name")
     Select(k); Paste()
-    Move(13, ${move_y_calt_colon})
+    Move(0, ${move_y_calt_colon})
     SetWidth(${width_hankaku})
  #    AddPosSub(lookupSub0, glyphName) # 移動前←後
     glyphName = GlyphInfo("Name")
@@ -4715,7 +4752,7 @@ while (i < \$argc)
     SelectFewer(${address_store_vert} + 102) # 保管した縦書きの縦線無し￤
     SelectFewer(${address_store_d_hyphen}) # 保管した縦書きの゠
 
-    SelectFewer("uni3008.vert", "uni301F.vert") # 縦書きの括弧類
+    SelectFewer("uni3008.vert", "uni301F.vert") # 縦書きの括弧、〓
     SelectFewer("uni30FC.vert") # 縦書きのー
     SelectFewer("uniFFE4.vert") # 縦書きの￤
     SelectFewer("uni2702.vert", "uni30A0.vert") # 縦書きの✂‖〰゠
