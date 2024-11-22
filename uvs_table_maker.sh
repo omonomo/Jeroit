@@ -20,7 +20,7 @@ exec 2> >(tee -a $LOG_ERR)
 #LOG
 
 fromFontName="BIZUDGothic-Regular" # 抽出元フォント名
-font_familyname="Meroit" # 生成フォントファミリー名
+font_familyname="Jeroit" # 生成フォントファミリー名
 
 cmapList="cmapList" # 異体字セレクタリスト
 extList="extList" # 異体字のglyphナンバーリスト

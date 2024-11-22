@@ -16,7 +16,7 @@ exec 1> >(tee -a $LOG_OUT)
 exec 2> >(tee -a $LOG_ERR)
 #LOG
 
-font_familyname="Meroit"
+font_familyname="Jeroit"
 font_familyname_suffix=""
 
 #font_familyname_suffix_def=(BS SP FX HB DG DS TM TS)
