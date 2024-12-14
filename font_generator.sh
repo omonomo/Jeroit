@@ -1102,11 +1102,9 @@ while (i < SizeOf(input_list))
     Select(65552);  Paste() # Temporary glyph
     Move(-300, 0)
     if (input_list[i] == "${input_latin_regular}")
- #        PasteWithOffset(300, 701)
-        PasteWithOffset(300, 745)
+        PasteWithOffset(300, 701 + 64)
     else
- #        PasteWithOffset(300, 688)
-        PasteWithOffset(300, 736)
+        PasteWithOffset(300, 688 + 68)
     endif
     RemoveOverlap()
     Copy()
