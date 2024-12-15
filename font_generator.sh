@@ -1189,6 +1189,33 @@ while (i < SizeOf(input_list))
 # 記号のグリフを加工
     Print("Edit symbols")
 
+# \`´ (拡大する)
+    Select(0u0060) # \`
+    SelectMore(0u00b4) # ´
+    Scale(130, 130,  ${width_latin} / 2, 730)
+    SetWidth(${width_hankaku})
+
+# ‵ (ベースフォントを置き換え)
+    Select(0u2032); Copy() # ′
+    Select(0u2035); Paste() # ‵
+    HFlip()
+    CorrectDirection()
+    SetWidth(${width_hankaku})
+
+# ‶ (ベースフォントを置き換え)
+    Select(0u2033); Copy() # ″
+    Select(0u2036); Paste() # ‶
+    HFlip()
+    CorrectDirection()
+    SetWidth(${width_hankaku})
+
+# ‷ (追加)
+    Select(0u2034); Copy() # ‴
+    Select(0u2037); Paste() # ‷
+    HFlip()
+    CorrectDirection()
+    SetWidth(${width_hankaku})
+
 # ℗ (ベースフォントを置き換え)
     # R を P にするスクリーン
     Select(0u2588); Copy() # Full block
