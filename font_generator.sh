@@ -771,7 +771,6 @@ while (i < SizeOf(input_list))
 # 4 (横棒を突き抜けさせる)
     Select(0u00af); Copy() # ¯
     Select(0u0034) # 4
-#    Select(65552);  Paste() # Temporary glyph
     if (input_list[i] == "${input_latin_regular}")
  #        PasteWithOffset(31, -515)
  #        PasteWithOffset(31, -515 - 7)
@@ -785,7 +784,6 @@ while (i < SizeOf(input_list))
     endif
     RemoveOverlap()
     SetWidth(${width_latin})
-    Select(65552);  Clear() # Temporary glyph
 
     Print("Edit alphabets")
 # W (cv07 のグリフに置換)
