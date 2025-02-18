@@ -762,6 +762,15 @@ while (i < SizeOf(input_list))
 
 # --------------------------------------------------
 
+# 幅が0のグリフを半角幅に変更
+    SelectWorthOutputting()
+    foreach
+        if (GlyphInfo("Width") == 0)
+            Move(${width_latin} ,0)
+            SetWidth(${width_latin})
+        endif
+    endloop
+
 # 罫線、ブロックを少し移動
     Print("Move box drawing and block")
     Select(0u2500, 0u259f)
