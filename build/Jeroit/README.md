@@ -4,7 +4,7 @@ Copyright (c) 2024 omonomo ([https://omonomo.github.io/Jeroit/](https://omonomo.
 
 ## 簡単な説明
 
-自作合成フォント [Cyroit](https://omonomo.github.io/Cyroit/) に [JetBrains Mono NL](https://www.jetbrains.com/ja-jp/lp/mono/) を合成しました。
+自作合成フォント [Cyroit](https://omonomo.github.io/Cyroit/) に [JetBrains Mono](https://www.jetbrains.com/ja-jp/lp/mono/) を合成しました。
 
 ## 収録フォントの主な違い
 
@@ -47,10 +47,10 @@ Copyright (c) 2024 omonomo ([https://omonomo.github.io/Jeroit/](https://omonomo.
 
 ## 素材にさせていただいたフォント
 
-[JetBrains Mono NL (Version 2.304)]  
-Copyright 2020 The JetBrains Mono NL Project Authors  
+[JetBrains Mono (Version 2.304)]  
+Copyright 2020 The JetBrains Mono Project Authors  
 ([https://www.jetbrains.com/ja-jp/lp/mono/](https://www.jetbrains.com/ja-jp/lp/mono/))  
-主にラテン文字、ギリシア文字、キリル文字で使用しています。JetBrains Mono NL のライセンスは [SIL Open Font License v1.1](https://www.jetbrains.com/ja-jp/lp/mono/#license) です。
+主にラテン文字、ギリシア文字、キリル文字で使用しています。JetBrains Mono のライセンスは [SIL Open Font License v1.1](https://www.jetbrains.com/ja-jp/lp/mono/#license) です。
 
 [Inconsolata (Version 3.001)]  
 Copyright 2006 The Inconsolata Project Authors  
