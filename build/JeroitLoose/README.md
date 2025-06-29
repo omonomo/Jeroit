@@ -33,6 +33,8 @@ Copyright (c) 2024 omonomo ([https://omonomo.github.io/Jeroit/](https://omonomo.
 **FX**: 文字間隔固定版  
 **HB**: 平凡版
 
+※ LG 付きはリガチャ対応
+
 ## 素材にさせていただいたフォントからの変更内容
 
 - em 値やラインギャップの変更
