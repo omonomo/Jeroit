@@ -24,7 +24,6 @@ Copyright (c) 2024 omonomo ([https://omonomo.github.io/Jeroit/](https://omonomo.
 | 少ない絵文字         |  ✕  |  ○  |  ✕  |  ✕  |  ✕  |  ✕  |  ✕  |
 | カーニング機能       |  ○  |  ○  |  ○  |  ○  |  ○  |  ✕  |  ○  |
 | Nerd Fonts           |  ○  |  ○  |  ○  |  ○  |  ○  |  ○  |  ○  |
-| Nerd Fonts          |  ○  |  ○  |  ○  |  ○  |  ○  |  ○  |  ○  |
 
 **無印**: 通常版 (GSUB の ss フィーチャにて機能の ON/OFF が可能)  
 **EH**: 絵文字減らした版 (GSUB の ss フィーチャにて機能の ON/OFF が可能)  
