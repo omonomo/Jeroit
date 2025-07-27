@@ -1391,7 +1391,7 @@ while (i < SizeOf(input_list))
     # リガチャ対応
     if ("${liga_flag}" == "true")
         # 破線無しを保管して加工
-        Select("bar_bar.liga"); Move(0, 26) # ||
+        Select("bar_bar.liga") # ||
         Copy() # |
         Select(${address_store_liga}); Paste() # 保管所
         Move(0, 15)
