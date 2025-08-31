@@ -5766,6 +5766,7 @@ while (i < \$argc)
 
 # --------------------------------------------------
 
+    SetGasp(65535, 15)
 # Save patched font
     Print("Save " + fontfamily + fontfamilysuffix + "-" + output_style + ".ttf")
     Generate(fontfamily + fontfamilysuffix + "-" + output_style + ".ttf", "", 0x04)
