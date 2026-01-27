@@ -45,11 +45,11 @@ Jeroit (じぇろいと) はコーディングにもお使いいただける日�
 
 | リンク                                                                                                          | 説明                                               |
 | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| [フォント (Jeroit)](https://github.com/omonomo/Jeroit/releases/download/v1.5.2/Jeroit_v1.5.2.zip)               | 通常版。半角幅が全角の1/2。                        |
-| [フォント (JeroitLoose)](https://github.com/omonomo/Jeroit/releases/download/v1.5.2/JeroitLoose_v1.5.2.zip)     | 文字間隔ゆるい版。半角幅が全角の9/16。             |
-| [フォント (JeroitLG)](https://github.com/omonomo/Jeroit/releases/download/v1.5.2/JeroitLG_v1.5.2.zip)           | リガチャ対応版。半角幅が全角の1/2。                |
-| [フォント (JeroitLooseLG)](https://github.com/omonomo/Jeroit/releases/download/v1.5.2/JeroitLooseLG_v1.5.2.zip) | リガチャ対応文字間隔ゆるい版。半角幅が全角の9/16。 |
-| [ソースコード](https://github.com/omonomo/Jeroit/archive/refs/tags/v1.5.2.zip)                                  | 使用方法は[下の方](#基本的な使い方)にあります。    |
+| [フォント (Jeroit)](https://github.com/omonomo/Jeroit/releases/download/v1.5.3/Jeroit_v1.5.3.zip)               | 通常版。半角幅が全角の1/2。                        |
+| [フォント (JeroitLoose)](https://github.com/omonomo/Jeroit/releases/download/v1.5.3/JeroitLoose_v1.5.3.zip)     | 文字間隔ゆるい版。半角幅が全角の9/16。             |
+| [フォント (JeroitLG)](https://github.com/omonomo/Jeroit/releases/download/v1.5.3/JeroitLG_v1.5.3.zip)           | リガチャ対応版。半角幅が全角の1/2。                |
+| [フォント (JeroitLooseLG)](https://github.com/omonomo/Jeroit/releases/download/v1.5.3/JeroitLooseLG_v1.5.3.zip) | リガチャ対応文字間隔ゆるい版。半角幅が全角の9/16。 |
+| [ソースコード](https://github.com/omonomo/Jeroit/archive/refs/tags/v1.5.3.zip)                                  | 使用方法は[下の方](#基本的な使い方)にあります。    |
 
 フォントやスクリプトの使用は自己責任にてお願いいたします。  
 各ファイルを使用することで生じた不具合・損害等について omonomo は責任を負いません。  
